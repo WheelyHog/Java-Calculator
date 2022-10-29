@@ -16,6 +16,7 @@ public class Calculator {
     }
 
     public void doCalculation(double num1, double num2, char operation) {
+
         double result;
         switch (operation) {
             case '+':
@@ -33,6 +34,7 @@ public class Calculator {
             case '/':
                 result = num1 / num2;
                 System.out.println("Result: " + result);
+                System.out.println("Do you want to continue? y/n");
                 break;
             default:
                 System.out.println("You entered non-valid operation");
@@ -44,11 +46,4 @@ public class Calculator {
         System.out.println("Enter operation:");
         return scanner.next().charAt(0);
     }
-
-    public double getNumber(){
-        System.out.println("Enter number");
-        double num = scanner.nextInt();
-        return num;
-    }
-
 }
