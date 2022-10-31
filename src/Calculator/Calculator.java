@@ -19,25 +19,29 @@ public class Calculator {
 
         double result;
         switch (operation) {
-            case '+':
+            case '+' -> {
                 result = num1 + num2;
                 System.out.println("Result: " + result);
-                break;
-            case '-':
+                getContinueAnswer();
+            }
+            case '-' -> {
                 result = num1 - num2;
                 System.out.println("Result: " + result);
-                break;
-            case '*':
+                getContinueAnswer();
+            }
+            case '*' -> {
                 result = num1 * num2;
                 System.out.println("Result: " + result);
-                break;
-            case '/':
+                getContinueAnswer();
+            }
+            case '/' -> {
                 result = num1 / num2;
                 System.out.println("Result: " + result);
-                System.out.println("Do you want to continue? y/n");
-                break;
-            default:
-                System.out.println("You entered non-valid operation");
+                getContinueAnswer();
+
+            }
+            default -> {System.out.println("You entered non-valid operation");
+            getContinueAnswer();}
         }
     }
 
@@ -45,5 +49,12 @@ public class Calculator {
         char operation;
         System.out.println("Enter operation:");
         return scanner.next().charAt(0);
+    }
+    public void getContinueAnswer(){
+        System.out.println("Do you want to continue? y/n");
+        if (scanner.next().charAt(0) == 'y'){
+            doCalculation(getNum(), getNum(), getOperation());
+        }
+
     }
 }
